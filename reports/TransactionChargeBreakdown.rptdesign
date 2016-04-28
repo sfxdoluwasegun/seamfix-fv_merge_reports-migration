@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="EnterDate" id="1662">
+            <text-property name="promptText">Enter Date</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">dateTime</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Long Date</property>
+                <property name="pattern">Long Date</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="eVoucher" id="1660">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/EVoucherDB</property>
+            <property name="odaUser">seamfix</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">azBsMA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Transactionbreadowm" id="1661">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">usage_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">usage_date</text-property>
+                    <text-property name="heading">usage_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">voucher_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">voucher_number</text-property>
+                    <text-property name="heading">voucher_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">request_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">request_date</text-property>
+                    <text-property name="heading">request_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">requesttype</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">requesttype</text-property>
+                    <text-property name="heading">requesttype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">reconcile_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">reconcile_date</text-property>
+                    <text-property name="heading">reconcile_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">reconcile_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">reconcile_type</text-property>
+                    <text-property name="heading">reconcile_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_service_charge_amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total_service_charge_amount</text-property>
+                    <text-property name="heading">total_service_charge_amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_voucher_amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total_voucher_amount</text-property>
+                    <text-property name="heading">total_voucher_amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_amount_paid</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total_amount_paid</text-property>
+                    <text-property name="heading">total_amount_paid</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">EnterDate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">93</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">usage_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">voucher_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">request_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">requesttype</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">reconcile_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">reconcile_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">total_service_charge_amount</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">total_voucher_amount</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">total_amount_paid</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">eVoucher</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">usage_date</property>
+                    <property name="nativeName">usage_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">voucher_number</property>
+                    <property name="nativeName">voucher_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">request_date</property>
+                    <property name="nativeName">request_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">requesttype</property>
+                    <property name="nativeName">requesttype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">reconcile_date</property>
+                    <property name="nativeName">reconcile_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">reconcile_type</property>
+                    <property name="nativeName">reconcile_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">total_service_charge_amount</property>
+                    <property name="nativeName">total_service_charge_amount</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">total_voucher_amount</property>
+                    <property name="nativeName">total_voucher_amount</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">total_amount_paid</property>
+                    <property name="nativeName">total_amount_paid</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+
+public.payment_history.id,
+DATE (public.voucher.usage_date) AS usage_date,
+public.voucher.voucher_number,
+DATE (public.voucher_request.request_date) AS request_date,
+public.voucher_order.order_type as requestType,
+DATE (public.fuel_voucher_reconcile_history.reconcile_date) AS reconcile_date,
+public.fuel_voucher_reconcile_history.reconcile_type,
+public.payment_history.total_service_charge_amount,
+public.payment_history.total_voucher_amount,
+public.payment_history.total_amount_paid
+
+from public.voucher,
+public.voucher_request,
+public.voucher_order,
+public.payment_history,
+public.fuel_voucher_reconcile_history
+
+where public.voucher.voucher_request = public.voucher_request.id
+and public.voucher_request.voucher_order = public.voucher_order.id
+and public.payment_history.voucher_order = public.voucher_order.id
+and public.payment_history.fuel_voucher_reconcile_history = public.fuel_voucher_reconcile_history.id
+and public.fuel_voucher_reconcile_history.reconcile_type = 'CREDIT'
+AND public.payment_history.payment_status = 'SUCCESSFUL'
+AND reconcile_date = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="watermark" id="1813">
+            <property name="backgroundImage">images/wm5.png</property>
+            <property name="backgroundRepeat">no-repeat</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="backgroundPositionX">250px</property>
+            <property name="backgroundPositionY">100px</property>
+            <property name="backgroundSizeHeight">300px</property>
+            <property name="backgroundSizeWidth">500px</property>
+            <page-footer>
+                <text id="3">
+                    <property name="color">#808080</property>
+                    <property name="textAlign">center</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[Report Generated:  <value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="1655">
+            <property name="backgroundColor">#83B031</property>
+            <property name="fontFamily">"Garamond"</property>
+            <property name="fontSize">14pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFFF</property>
+            <property name="borderBottomColor">#808000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#808000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#808000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#808000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">TRANSACTION CHARGE BREAKDOWN</text-property>
+        </label>
+        <label id="1742"/>
+        <grid id="1724">
+            <property name="fontFamily">"Calibri"</property>
+            <property name="fontSize">small</property>
+            <property name="color">#000000</property>
+            <property name="dataSet">Transactionbreadowm</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">usage_date</property>
+                    <text-property name="displayName">usage_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["usage_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">voucher_number</property>
+                    <text-property name="displayName">voucher_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["voucher_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">request_date</property>
+                    <text-property name="displayName">request_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["request_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">requesttype</property>
+                    <text-property name="displayName">requesttype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["requesttype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_date</property>
+                    <text-property name="displayName">reconcile_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_type</property>
+                    <text-property name="displayName">reconcile_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">total_service_charge_amount</property>
+                    <text-property name="displayName">total_service_charge_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_service_charge_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">total_voucher_amount</property>
+                    <text-property name="displayName">total_voucher_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_voucher_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["id"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1725">
+                <property name="fontWeight">bold</property>
+                <property name="color">#000000</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="1726">
+                <property name="textAlign">left</property>
+            </column>
+            <column id="1727"/>
+            <row id="1728">
+                <cell id="1729">
+                    <property name="borderBottomColor">#F0F0F0</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#F0F0F0</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#F0F0F0</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#F0F0F0</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1740">
+                        <text-property name="text">DATE :</text-property>
+                    </label>
+                </cell>
+                <cell id="1730">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#F0F0F0</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#F0F0F0</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#F0F0F0</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#F0F0F0</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1763">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Long Date</property>
+                            <property name="pattern">Long Date</property>
+                        </structure>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EnterDate</property>
+                                <expression name="expression" type="javascript">params["EnterDate"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EnterDate</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1732">
+                <cell id="1733">
+                    <property name="borderBottomColor">#F0F0F0</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#F0F0F0</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#F0F0F0</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#F0F0F0</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1741">
+                        <text-property name="text">NO. OF VOUCHERS :</text-property>
+                    </label>
+                </cell>
+                <cell id="1734">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#F0F0F0</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#F0F0F0</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#F0F0F0</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#F0F0F0</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1765">
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">###0{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="resultSetColumn">Aggregation</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="1659"/>
+        <table id="1663">
+            <property name="fontFamily">"Calibri"</property>
+            <property name="fontSize">small</property>
+            <property name="textAlign">center</property>
+            <property name="dataSet">Transactionbreadowm</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">usage_date</property>
+                    <text-property name="displayName">usage_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["usage_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">voucher_number</property>
+                    <text-property name="displayName">voucher_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["voucher_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">request_date</property>
+                    <text-property name="displayName">request_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["request_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">requesttype</property>
+                    <text-property name="displayName">requesttype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["requesttype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_date</property>
+                    <text-property name="displayName">reconcile_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_type</property>
+                    <text-property name="displayName">reconcile_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">total_service_charge_amount</property>
+                    <text-property name="displayName">total_service_charge_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_service_charge_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">total_voucher_amount</property>
+                    <text-property name="displayName">total_voucher_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_voucher_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["id"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_service_charge_amount"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_2</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_voucher_amount"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1694">
+                <property name="width">10%</property>
+            </column>
+            <column id="1696"/>
+            <column id="1697"/>
+            <column id="1702"/>
+            <header>
+                <row id="1664">
+                    <property name="backgroundColor">#AED568</property>
+                    <property name="fontFamily">"Garamond"</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFFF</property>
+                    <cell id="1665">
+                        <property name="color">#000000</property>
+                        <property name="borderBottomColor">#808000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#808000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#808000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#808000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1703">
+                            <text-property name="text">S/N</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1667">
+                        <property name="color">#000000</property>
+                        <property name="borderBottomColor">#808000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#808000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#808000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#808000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1706">
+                            <text-property name="text">VOUCHER AMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1668">
+                        <property name="color">#000000</property>
+                        <property name="borderBottomColor">#808000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#808000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#808000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#808000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1705">
+                            <text-property name="text">TRANSACTION CHARGE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1673">
+                        <property name="color">#000000</property>
+                        <property name="borderBottomColor">#808000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#808000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#808000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#808000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1711">
+                            <text-property name="text">RECONCILE DATE</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1674">
+                    <list-property name="highlightRules">
+                        <structure>
+                            <property name="operator">eq</property>
+                            <property name="backgroundColor">#F4F4F4</property>
+                            <expression name="testExpr" type="javascript">row.__rownum%2</expression>
+                            <simple-property-list name="value1">
+                                <value type="javascript">0</value>
+                            </simple-property-list>
+                        </structure>
+                    </list-property>
+                    <cell id="1675">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1723">
+                            <property name="resultSetColumn">Aggregation</property>
+                        </data>
+                    </cell>
+                    <cell id="1677">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1715">
+                            <property name="resultSetColumn">total_voucher_amount</property>
+                        </data>
+                    </cell>
+                    <cell id="1678">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1714">
+                            <property name="resultSetColumn">total_service_charge_amount</property>
+                        </data>
+                    </cell>
+                    <cell id="1683">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1718">
+                            <property name="resultSetColumn">reconcile_date</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="1684">
+                    <cell id="1685">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="1687">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="1688">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="1693">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                </row>
+                <row id="1770">
+                    <cell id="1771">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1780"/>
+                    </cell>
+                </row>
+                <row id="1753">
+                    <cell id="1754">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="1757">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1766">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">TOTAL TRANSACTION CHARGE(₦) :</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1762">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1768">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">Aggregation_1</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="1787">
+                    <cell id="1788">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="1790">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="1767">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">TOTAL VOUCHER AMOUNT (₦) :</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1792">
+                        <property name="borderBottomColor">#F7F7F7</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#F7F7F7</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#F7F7F7</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#F7F7F7</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="1769">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">Aggregation_2</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <label id="1795"/>
+        <grid id="1796">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Transactionbreadowm</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">usage_date</property>
+                    <text-property name="displayName">usage_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["usage_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">voucher_number</property>
+                    <text-property name="displayName">voucher_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["voucher_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">request_date</property>
+                    <text-property name="displayName">request_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["request_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">requesttype</property>
+                    <text-property name="displayName">requesttype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["requesttype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_date</property>
+                    <text-property name="displayName">reconcile_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">reconcile_type</property>
+                    <text-property name="displayName">reconcile_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["reconcile_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">total_service_charge_amount</property>
+                    <text-property name="displayName">total_service_charge_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_service_charge_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">total_voucher_amount</property>
+                    <text-property name="displayName">total_voucher_amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_voucher_amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["total_amount_paid"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1797">
+                <property name="width">5.020833333333333in</property>
+            </column>
+            <column id="1798">
+                <property name="width">2.9270833333333335in</property>
+            </column>
+            <row id="1799">
+                <cell id="1800">
+                    <label id="1803">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text"> TOTAL AMOUNT PAID (₦) :</text-property>
+                    </label>
+                </cell>
+                <cell id="1801">
+                    <data id="1818">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="fontSize">small</property>
+                        <property name="resultSetColumn">Aggregation</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="1804"/>
+        <label id="1805"/>
+        <label id="1806"/>
+        <label id="1807"/>
+        <label id="1808"/>
+        <label id="1809"/>
+        <label id="1810"/>
+        <label id="1811"/>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">fuelvoucherlogo-2.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAPoAAAAwCAYAAAA4n2fvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFn
+                ZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/
+                IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6
+                bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8w
+                Mi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9y
+                Zy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIg
+                eG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDov
+                L25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20v
+                eGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9w
+                IENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjA4Nzk4QjVGRUJFMTFFMjhG
+                NjRCQjg0RUJBRTcwNzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjA4Nzk4QjZGRUJFMTFFMjhG
+                NjRCQjg0RUJBRTcwNzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlp
+                ZDpGMDg3OThCM0ZFQkUxMUUyOEY2NEJCODRFQkFFNzA3NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRp
+                ZDpGMDg3OThCNEZFQkUxMUUyOEY2NEJCODRFQkFFNzA3NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9y
+                ZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgypUNgAABzLSURBVHja7F0HnBXV
+                uf9mbtm7vS9bgUVYuiVUKUIUNCogoSm+ZyKoJMYYU16ixliS4DM2kpdiEkNM8iwkiAUlNhQIRFCRJh2k
+                wy6wvd7dW2byfXO/4Z6dnbl772UBlfl+HGbu1DPnnP/Xz1lJVVWwySabvtjkjOXi/v37n/YL1SBkIGvp
+                73Q4+9Q31PYIBP1ZqalpSX6/3yfLci0yngq87IDT6dwtSdIBPAa4tXvKJpuYdu7ceWaBHj+68Z8K2aoC
+                o/DXSCwXB9VA79TU1HxFVdIcDgcgsOnKFgR8NW4PBQKBnQj6jbi/LikpaYuiKDbgbbLpbEj0OKR3P0VR
+                r3e4pCsdLhgmyZLLlQRAcK1trIJrLp8G2endYO269yEvLw8aGxuTEhMTkxDUJdXV1WMI2K2trVBRUXEQ
+                mcFaZAKLU1JSlgaDQRv0Ntl0zoAuaeCWUHrfiL9udiXABEWVIDlHBodTAkkGcCdLEPSp0NAKkJAqQ7e8
+                AiDgJiQkENAhIyMDMjMzITk5Wdtva2sDlOg9Eeg96+vrbzxy5Mgh/P0nlPbPuFyuCrsLbbLpLAKdQOxv
+                Ub/lSpJ+jGAvSivEAyh1UZKT2g7BNhVaG1XwNeN1XoBGhGhtRTOUDC+EHTt2wIkTJ4AcgwhkDeQE8Jyc
+                HEAJr/0uLS2FlpYWOtbD5/PNLy8vf6iuru5RfPV8ZAytqOrbvWmTTWcM6Komyae01qsL0orkC0ijTsqS
+                NeArQQT0cQVkB4CvRUVJDoDXaTe4HAlwoqIS9n66F9xuNyB4gWz1pqYmQABrqjmq75qkJ/vc6/VCWloa
+                ZGVlaeDPzc11btmy5b6ePXvOW7t27Q8LCgr+RtfZZJNNJoI4lvBaB6+7BG4lAI+hKn5XWoEMnnRU0V0S
+                NJ4gGxpB3aBCACW57EC13aEJ+FNE3nQCNxWS2Fb10MFLDCA1NVVT8wcMGACHDx+GBQsWwCuvvAIrV66E
+                qqqqJXh+rtPpbLRDhjZ9kSker3tMQM9N6QuuhJA6TtI62KpO7z3OtcSdJEFztQJOPNdQrmjSGxCfGrgd
+                LPXNlAF8NwGZJHmnFUUuoavne/fuhcWLF2sS/6233tKkPEp3kvrHUb2/GhnHZlu622QDXRCssVx8+dfd
+                MPAyJxT3k6FshAMK+zleOviRf0/BhS6QUZIf3xpA1TykqsuukN1+CuShEFvoNxeU8+Cgiw3H2xWBKRBD
+                aGhogGnTpmkq/cMPPwyHDh3Szo8dO5acdvl5eXmb6uvrp5DGYJNNNsUh0V8+ORxam1Twkcc8SQPyJX+4
+                rTnneAW8M2SWBz7+W4umz8uC5U/Sv7FKheY6FZxuBns0FUM1P4gC3OmWIDNfYrCDprqTrU52PDns/H4/
+                9O7dGwoLC6G4uBjQXteYQkVFxeyUlJS/22q8TbZEj9EZV3UkJK0JhE01cFt+b8fTE7/pSXhyVvMdhz70
+                /y61wAH1R4MIdOkUWBsQ5IW9ZRg9y60J6IA/OpVaxpsTU2TYttoPW5YHIDkj9ExKrCGpTgAmm50kN3nt
+                iSg8N2rUKNi0aRNJ90XIBGrw+nfsoWHT+U4xe93JNkcagOXpNq/6leojii8hFZ46usH/3YRkqY8rUQKV
+                sRzwY/EBTLorEcZOd8N+VrNDKTORKaj6IS87H4ZcnQaPH6yDY7sUSM2WTqnwVGifJDxJ8927d2uSfdeu
+                XXDRRRdpnvkPP/zw7fz8/DK01/faXW2TDfToibxmt2D5I5bfo9B9m8BM4PekSVfj709VQWCT6k3g9KSo
+                sHdPBfSU50Lv7Iko6Tu3n+u8h+GDPY9DSk4D5BQ74MCWoCWDILB369YN9u/fD927dwdU2bUt0Wqk0tLS
+                AjvObpMN9OjpKgY50b0KYictVwKXR5Pi+yQH3I3HHxXtbGICDc2VcEHiQJhQMj/qF/XIAGhTq+GDmvtR
+                KyiGznxrBPbc3Fwt4Ybs9mHDhmne+NGjR+dv3rx5UU5OzmzbE2/T+UqxuqZ78/afWOr9rSqk58ngSSY1
+                XXN6PYZla0c13AcprvyYK0f3yKhEROtOI7ATuCsrK7VwG6rt2vGSkpIbWltbJ9jdbZMt0aMjPWNmM/3n
+                bVShsI8MJQMdsGN1ALKKKNkdJuGpQ+JNEsI1oLTFXDmvrzEqe14kstspAYccdhs3boQhQ4bAu+++S0zg
+                //F0YYRbM7FcEm3VsKw7B/1FM/+SsFCO/07BnLqCXCJYjmLZE4l3YhnOjXocy/bP8NgswtKX99diabXh
+                evYkup+3ZfQf2eep2TIMuswJPu8pSB7G8p0OHCU0DRXee28FbNiwQdt/7bXX4ODBg1oizEsvvaSFzGpq
+                arR9n1fVbO24uBe+i/LiKevu2LFjMHz4cEq4KWhqavp+hPg6AeC9KMv756i/3uH3/0LkbVhe4OObOuGM
+                9/F172K58DM+Nm8U2rvIhurZBfpyEeha+KxSgX6jnFBQJkNLwykl+zdY1os3Uj470azpN8CDDz6o7V93
+                3XUaqCmPfcaMGVqYbNu2bdp+7XEV8tJz4/ookuo0842etX37di0Ed/3110NGVtYDbW1tVml4vhheUX2O
+                +quSt3XCMXI8PMn7JO3HRLj/Wt7WYFn0GR+bLaJVZkP17AL9Yx5Yg1llhOZ6VVPdB451Qt0JBQSH+mSz
+                B7gT3OByuU79pjCZPrdcXE1GAoDTSXUh1b2srAymXHstTJk5E9J79ABfQ0M6nrrJij8I+z/H0ocZmrGQ
+                OjnsHPVXUAC3SIuF/Wss7r2A+01Tpj4HY9P2nJ5DG72C7fMvYaH41QECZFuzChdf6YIPXvGDH01xZwjH
+                J7DchuVP9IOy2IiW/XMppKSGVPI1a9bABRdcoMW8aWLKwIEDteO0n1Uow6e1J+P+MEqemYkAHzBsGPz6
+                nnshZfMWKO5VCjtkuCNLhb92Moo+5fJ5oX1YdmHpxyrvvSbXiIz3+c/ZOHXYUD27QCf6hIFeSkAn0Vt3
+                UoX+qL73HemA1Ut9kJsd6hdfGyxECf81JQhjVTUkjIYMHXLqQWPGhLXM8ePHd9hvrm6O+8MoiWbJkiXw
+                xIIF0Cs9A8b06wtuRYHGYHBoJSgDPSBFckSlx9B+Q3l7AMsxw/liLD3Zt/GxhQpKOtCXsVCIoJHt/3hM
+                g79AKLTZnftno+H8FN42YVlhcn9P/pYE9rOssXhPDms1pAFtoW4ynCduncnmwQ6LZ9A7xmLpxvd/hKW8
+                E0ZGNIn7hpy9/46iTYjxXcxtvBvLBovrsiDkaJaF774SSy7Xa+X5CPRdvB2kDxiKlVOIeuQ0t2Zbp+WE
+                VpOhrDjcTnUnwr6AX8qIuXIOV3z2CJoA5Iwj597oESPBlZUJlfv2Qx5WJoDjE9nQV6FrPM40oHXvOyUJ
+                3G84fweWe4TBVGs4PwPL/0H7aAD5Ch7B8lCMdXkVwjkM1xqAns/MRL/OqND8Acs3DMfIq/8tLKsMxycx
+                UwE2YT42nH8WQtELAu8Ik3reieUBZhii2fRrCDkZjxuup9/zuG2LheME2ulgiPAwebA8x+dFIiY6FzpG
+                Jq4QzB9qh28LZo6uyY4VGM55I9GBuT/oTjnKgy8b7tRs9SDLLXb/1pyoqT7UVp+QASWxvSjBkQKKGr0f
+                Rp/dVl9fr81Zv+qqqzR/wKZt2+GI3w8FCQmQjUz7pBIc75ZgvhrZRInWjgxwO3pNznsF8KomIH9ROE8e
+                8xIGPXkrC0zAF4n2COr79exnMEpzor8a7iNppatTZF81sCTrz+cuM0h3XydOskbDVqT/NZgVZJvl8VC5
+                C0LhwSdMpK2epEWaTjbvk2q4nttLTHuUWNMo499b+LsoqjIayzb2v4gMwi8wHLN31ZpoLl94oG/h7fB2
+                UhTFZFuLSup6hyHtglRnVet28Plbwe3yRP2iow3rwCG7tOmsnUnw2tpaDeQjRozQCnnyKXRHsfRGnw/6
+                ZGWDghyJxEi2JI1tBjUVn9xo8ch5LJWML5ZYHX3WMEicFs4jxTCQwk0StpPfxjJbkPaPsBYwj6XSmhj6
+                ZjFLy4HMNI4IEl5X20U1dI4A8t+x1GxgcL/IA32RQZIqFg5MnQKGrU6DBZBTXPxWVqe7sR+H4uS/Mnme
+                m82i6Tz2SDt5Cst1zJBuxrJQuP5+BjkxpKlY3uTjl7AGmsHvu9LkmyT+/inc7r2wzOQ+Oe9U93LuxDLj
+                CZoRqpqklHscmVJzoBJe3DEDStLGcK57JJ+6BA1tR+BA4xuQmdUDzHIlyDtPpaqqSlt9ZsKECTBo0CAN
+                9LQwxapVq7QwG2XKUQJNFaoZNSjxk0Koc8sgDeYBZ0YTuZjRQQPQ46FpPIAphPQVw7l7eYD2Y7DHAvSl
+                DHSir7I6TDat7ol/2QDUmYIN/G2DlP8Rlj9DKIZNbbX1NL/5bt4SkMYJjKCCzYFIdDNrPPr4m8rPScVy
+                qQHotwkM803h+CZmbK9w3xaZ+FSAzZV/CU7Zzz3I4wU6sFSjhIseFjYScc3HuEPSVFBcKa5uQFL9aFMn
+                uSahJeVQ5XZDTloJ2ulOU4CXl5drKa8TJ06EkSNHagBft26d5rGnfVo+moB+qkgqnFQV6IuqRy4ymkNK
+                sDRRkqyAXs/STzJxnK3qgnbXpeh+k34I8Dv6QTgzLFrayKClUNp/MdBHC89fYrheZ9bvmjxLzPy7sAuA
+                fjFv3zOR9tH6hUQ6zJqLGCLuJmgfm03Gt+iXGc6gtzJNv1AUL9A/5s4fbAH05YINT3acrKCoT3Rma8VS
+                jsuU1RZy7PlQ1tWeoKWoAmgOqHg8FGOnteI0UTRzpraqDEl0AviKFSu0pBzKb9eXqDLq0B7EbSItdBdC
+                cK8I33cfq7JnivIEh2Yk1WZQHM9exvaublqN5W2zAdBuloiaH8XkOQ0GO/l0SX/XkTjuNbP3ZBM/gZhB
+                90onz+wWw7vOW6BvYO/lRTywjPbnUB7A+opxO1lCmTvRnCEbH014aEBZ6m1WtRRYlVaUTXNooD1WdRCa
+                Ax649dZbNRWd0lvfeOMNrdACFEVFRaYAD3+oBDUo0atUOaS7Su3sTiP542gTNYKNDia2vm4z7+PfovbQ
+                zPZKPKB4noEOrI6PExiA16IeaiffI8XwzWon3xxPHpQc4XlW133K7eswOA/rhPPRvuu8BXoHz7vVQOBE
+                N7+4ohMd09aVw0JTXdu8oQkyLU0UklNBcoaSbogB+AMtqKIrMOemW+DqyeO0v9xCC0PSopD0hx569eql
+                gTuaKaiypjOq2jYBpEzVegQnxDAA9YFkNmvHKq1Wl6AHBJX2dJmKTuv5uaWsuquC/W6sWxM7tDIiSGCA
+                9im3InDaYmCSuuMz/wyO5+MGW31VFz/fwZoChRUpIWwU+1lIU+rP/pQbBOfmYHaKkmB8C8tPeMhNh45h
+                ya9h+TprFH24/ktZ83qZNWg9Mer2ruCU0dA23naaCqotRBFaFOaU5Kah19YSSrQ5eVSFymMKNNTRapEq
+                uBJD6rtmrAaC4PP74Tt3fgcuGzMOFi5cCHPmzIH169dD3759ITs7W7PTo1sXTmUEo/qOnAarldwFHd8i
+                qI5mf4HSauLIh7yllXoyY3ifS5D4nanvutSTuZ5mqqzuIxgXwabWfTJmzMssYNrHok76bLvLzyDQKTxX
+                aXA0diVRu36Z/R9LWGNbzH1Px2ZheUZwIOay5ns1hDz9c9l3YOaoGsxtM5+1slf5+E8hFDW5iRnyN+Op
+                eLxAr+PBViQMvg72NuGvvkaFqnJVqjqmQnV5qFSW0zEF6qpQRUcJTgzA5eZ13wXMklMtOysbnn/hWZjz
+                jZth69at0K9fP02SB4OxzXOgEF1AEzeq1jtYvaQuWDaymaWn3rFiyGYyWOfVLxIkxBsGiUrHnuWB4bIw
+                BYZ0Uq8XDL9fB/Npnq/zlpxaPzf4Bp4QHJMbDRqDTr+FUCaeTo+yI9CMHudtLkuqNOEcgeOpLgKj3ra3
+                m4CdAPcmm5zxEPk7KBS6ggHZyv18N2sPFNrTIxwnuD0ogvEiM/cV3K5uE19AOjNDqt8vBA2IwoJ/h1Ak
+                4AFmZmcN6LpXk6gs0kWKoqL6rYIXbW5vi4qqt4qSWtVWinUlUJJLhMrJkpYjX3myGopySiA9PT1mgJ/S
+                J1UtIw7SkJs4Q2I4IYLNF8sk+McF59bbDASK975moe7qtvn3eJ/mmJfz4CepS+Gm/4ZQnNk4MUhPsKGQ
+                0jHugwKTOn2ApUr4vdSi7k9B2KNNauVevpc87LoPY67B13AQy0tC35Mzdh3X50cRxhYN9D/z/hT+zrXs
+                h5jDwLwjhj6QLd6j5wJILG0/ZOm7jpkqhTP/YeiTaPue7kkxqYc+lpKE+/2CtuYRjmcziI31FtdKyxcY
+                syI4b8kpmny2gb6+E/U0bI/LIbVdKw6AaJdcJ43A4ZRUNeCq87WqbXIcUxvEVifxW48PbWXQR7DLU2N4
+                xV+xLBB+D+U2WQfhpBiPSVtTcsiPuWqJPPinssQjVfuH0D4ODHy97jkvZMmUZlGvV4X9lyM4HYdBOPed
+                VhAaIdjUcyzunQ3tE29Gcn1egHA+eZ7Jfbey30AHxaUCQ1kK7aMCqZ34kgqFwS9SA7e/roUMZ5t4JP+m
+                8N4MA/NKFPbdhuf9RmjLRVy+xf1O91EM//esUv8YwpmHZRDOrCtmnwlwf6UykG8SzLg0QRtK5HFAw/Rp
+                VulpLD0pmCZnxRkHQkNeCGdobjPl0BOjuORa18xDnwTXt9Sr3ZLSpFxF0RquhNXGEm7IQuaE7QDVgqBO
+                wYfMdydBBmoIJ/H39mAAtgeC3qT2f3p5vSBBt8VY1R9wh4xljk827TvMZ/7O3NosC+8RVtFHMMhU9ga/
+                zyozmKjuE7nNdZX5sEWd7mbwnLRwmonaxRXMoIbyINvHqmhDBAZxOTujhnC9P2AHUymbAlZTD+9iLehS
+                7rt6HuzGNqd20+PeZoktk7mtzb7/ENdrCPsaMljD2Qjm+QArhb43xtFTBGY6l/vxLsG/cQcz8u+xqq7P
+                bXhaEIbEKPRw3h7+NoXbWpf6bwtOT1L7n2PpTfeOZ0cdHYtrSbSY/oDD0xvaOdlJEnzE6uY0g8PIhza6
+                ikCV66sV+oMPO/A1/eP5k+ZUvbxSecyG1/3vv/poqzZhhv4ElGruZM9lVbaYSz5elovILyiQ5MJUSSpG
+                1T2/UVVdW5XgD7GiT9h/Zd2mzzj1YEa1hRn3xTt37uxxNiX6wWgcQ9JpIolurz6qJA6d6oJGZBrL/+jT
+                1qZzukz/6ksll09Eo4ouO6AGgf52BIrWbPzoXAT8LntlA5s+B5Qt+HsCrH2dVdW9ktWu7qxiNAtOhVgd
+                WhGRTip8zVEFxt+cAC34xn8/74PcUhk6TZkXTlNWnCdUI5qVVG2D3KbPCW1k7TTdwpw74844gPBMtnyD
+                HRnedgHcSSsIoJVZd0KFK29PgEuuccLJA0roL7Z2re5dxPZvbpxtafTxJZ1mfcgxdInF8Uj1SIiyvgNY
+                NSzk7zarLx3vafEM+l6Kmw/qovYv5fedTo5DNIsYGAWcJ0rhFw9e0vmbqJjNXSC1nJyq/SM8I5/9BGUQ
+                /aIoXQr0D3j7gNBAsxicWylZTUtYOx0wSjwrTqUUWVX7k8xT7/HA4CuccGR3ECW8CnLXLDREnthfQig5
+                gbyn1xnOJ7OjRW9omixyu8HKuAfCiSbfhdB0TzMiR91U4fe3oWPGGDnoyJtPM7t+Bu0Xp8iEcHiOnEUU
+                LtK9z/dA5GWtRZCSY4/mvj/J78kwjA2aDz+dv2WayTPuZsfUZG67L1m8i+LZs4XflPV1qeEaCinez+1P
+                ceQvd1J/cgCPsbBpV0M4DDYU2oftiL4P4am7c/UxK5ybwftUj5/yPmW8zTM85w4IhzdHQceMNarDI9w+
+                k02+ifrsN3yO2ohmLhqjFXfyM/SEnIJzAXQK/pMHltL3vKwW/0NTmRWYr2XDhYzktnhfQE43LIfTcyTo
+                ViKDB/XvtEwZ5v02CW58KBEcKNuO7QlqEv80AU/c8kVuVAIReTlzDG2VJ7RZMoTDJ7rJQp7Ya1gyUqjE
+                agkiao8fCJI51yCJJB74tBb9z7ldxeSbEyxls/ld47iuDpZOB6L4Xuo3Wt2GYs0U1qJFIcTlnGjw9WNG
+                QECn+LNxIlAiA5zabAnX2UqqZRrsTqPUpjb4Cz+LBvyUCJoLgXmwhRTUFy+dJ0jrHMM1axiYbmY4y4Vz
+                1YIGc6nAvIZAx4xE+q5aoU+NoT7ytFMU5WEufzDRYCh3YT4zc4COSVYkAH7HTIeu23UugF7Jjf06S3T6
+                0E9Rmt+CoFvicEJZYrI0ldZ7iPevF5N9npwmzcYygVJjPTis/SjVKUf+uh944L6lKTDpTg94mxRorD4t
+                6V7BEm4qg+s9aL/0k8odrQpA8ZpIGRoobzHTaLPwLxIolkF4jrYX2sd1SRJQSOkjQXMyZgqdZNWbBsLb
+                vL0IOi5X1RklWQCKnrfZYKZ1N1zjY/DnsgZSF4GxiZl5XuiYE0+5AyUMyon8bCtXyg3MjCUTEBexlkH9
+                RJmKH0PHOQfrmBlSws4L0H5FIcopaOTnvMSFNKQa7ldj21FdKOPuKpP31DFTmsTFaAJVsf09jhlKrqHN
+                iZp4TF4D5qnKZwXoRPuY+9LgzJJk6IOgfqbNC9knjyq7a06oFH4rluN8EyXZeJvUhyoOKMsbatTZNLON
+                Sl2lAvs2BUBCYM/4iQe+/mQSrzMfN9gV5tD6nGa/SVupwnGryRtVPFBWR3gXMcdHGWA0SLYb7Hs9WCAL
+                v4MmTppBLL1+JQDkKHQNBQzjw2wF7gQegLN5//cRzISgoa2dJu1/OT+LpOefwHzeeioDYjmfv9LkGjq/
+                kNVzMrGOm1yzGjquuAPMAAiwNzPot7B2sAc6Jqt4GLx9mDHIJm2Ywuf7QMd5DV4+RqHqpxnk75n4kwtY
+                4+wRb2c6oeuoGYHWTKp2Q7VCM9J6UraqLJuGwWJT39WQCl9bqfQGw5SzauzCQzuCUDLYodnuS37mhVbs
+                vgSKtcf2Xhocf2b7mdYNe4Y5/1ZBKuUIXDvJoLrrREDrbC60iwfJL9lGM65q2sz1cbMkTDVxwqxiM4ky
+                0Z5niTqeARKjF8TUi6IY3kmDzTgZo5W1k81RvCPZYJt6TdpkMbd/JLqUmdv32bRoho65/fqKuiSNKR//
+                MZPn1IH1stfU1zeyaUpAvQXCK9eIdITNH930m2wyptZB+xVwwNCmG/k9B8F8kpCLzarTWpiyK4GudSet
+                G0dSNjEVylsaQyCVuujZnmTpENn8ZgBuOK7Al652gq/FA8sWtIHTHbPNTp07hwE8gCXzfsP5DQzO1SxJ
+                nrWQOMWdvCuZJQB13qsQXq9NtJ+38SBawe9aaCINsgWQpjAwjYtIzGIT4KBFXTwWXu5lXKc57JsgBveJ
+                ybdG83ezKMf8J+zL0VM7PzJRg9OiYBiTmDmuYYn5U9YA9NRbN4RTWlezDUyOrOdM/AvdLd7jY2y0cfFb
+                mBHZ/IzDbG8bU6cpHDZWMGka2cwySmtghvlH1kDeN9Tzu6x5yGzGHT13QGfFLhgI/UAV/rjDqf5PwAcD
+                KEsuGsFteFpYtCggo7bQlJIur3AnAJjNayGJT466suEOSEiWtHrECPTVDJQiVkOfM3G+LObOLWYH1r9M
+                nrMfOl8qaZkAyGX8TNmg3r7Mx4t4cJj9UccFEE4BXWkBZg9E/gMIWy3uq2Q/w2gGz3Mm5sO7YJ2CCwbn
+                IQ3kkdy2i0zaaC1EFycmTeafwnh53QDCA8xYdHoEzMN/9RGcpZsNjJcm65itUb9SqPM+E59MDX+XHgWp
+                NWmXNw19DiZtPIIZgu5sjR2eqqqCTTbZ9MUm2W4Cm2z64tN/BBgALcJ5Hab5IRwAAAAASUVORK5CYII=
+            </property>
+        </structure>
+    </list-property>
+</report>

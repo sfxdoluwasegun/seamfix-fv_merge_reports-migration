@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.0.v201405191524 Build &lt;4.4.0.v20140606-1451></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="CorporateUserId" id="1933">
+            <text-property name="promptText">Corporate User Id</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">decimal</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="evoucher" id="112">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/evoucherdb</property>
+            <property name="odaUser">seamfix</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">azBsMA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="FuelDirectData" id="1825">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mobile_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">mobile_number</text-property>
+                    <text-property name="heading">mobile_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">user_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">user_type</text-property>
+                    <text-property name="heading">user_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">amount</text-property>
+                    <text-property name="heading">amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">date</text-property>
+                    <text-property name="heading">date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">param_stat</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">param_stat</text-property>
+                    <text-property name="heading">param_stat</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">CorporateUserId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">mobile_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">user_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">amount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">param_stat</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">evoucher</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">mobile_number</property>
+                    <property name="nativeName">mobile_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">user_type</property>
+                    <property name="nativeName">user_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">amount</property>
+                    <property name="nativeName">amount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">date</property>
+                    <property name="nativeName">date</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">param_stat</property>
+                    <property name="nativeName">param_stat</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[
+select *,0 as param_stat from 
+(
+select upper(name) as name,corporate_user.mobile_number,'Corporate' as user_type,voucher.amount,usage_date as date,
+corporate_user.id
+from corporate_user,voucher,user_account
+where voucher.user_account = user_account.id
+and user_account.user_type = corporate_user.id
+and voucher.dispense_directly is true
+
+
+union all
+
+select upper(name) as name,guest_user.mobile_number,'Individual' as user_type,voucher.amount,usage_date as date,
+guest_user.id
+from guest_user,voucher,user_account
+where voucher.user_account = user_account.id
+and user_account.user_type = guest_user.id
+and voucher.dispense_directly is true
+
+)allusers
+where id = ?
+order by date asc
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mobile_number</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>mobile_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mobile_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>user_type</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>user_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>user_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount</design:label>
+            <design:formattingHints>
+              <design:displaySize>17</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>date</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="9">
+            <property name="textAlign">center</property>
+            <property name="width">100%</property>
+            <column id="12">
+                <property name="textAlign">center</property>
+                <property name="width">60%</property>
+            </column>
+            <row id="14">
+                <cell id="17">
+                    <image id="1437">
+                        <property name="height">0.8645833333333334in</property>
+                        <property name="width">2.84375in</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">headermobile.png</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="19">
+                <cell id="22">
+                    <grid id="1481">
+                        <property name="fontSize">small</property>
+                        <property name="textAlign">center</property>
+                        <property name="width">100%</property>
+                        <column id="1482">
+                            <property name="width">43%</property>
+                        </column>
+                        <column id="1483">
+                            <property name="width">57%</property>
+                        </column>
+                        <row id="1484">
+                            <cell id="1485">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <label id="1494">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">smaller</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">EASY STEPS :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1486">
+                                <label id="1496">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">smaller</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Decide Value - Make Payment - Top Up Anywhere</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="36">
+                        <property name="width">100%</property>
+                        <column id="37">
+                            <property name="width">57%</property>
+                        </column>
+                        <column id="38">
+                            <property name="width">42%</property>
+                        </column>
+                        <row id="39">
+                            <cell id="40">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                                <label id="42">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">fuelvoucher.com.ng</text-property>
+                                </label>
+                                <label id="1789"/>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="1790"/>
+        <label id="1791">
+            <property name="backgroundColor">#F5F5F5</property>
+            <property name="fontFamily">"Garamond"</property>
+            <property name="fontSize">24px</property>
+            <property name="fontWeight">normal</property>
+            <property name="color">#008040</property>
+            <text-property name="text">Voucher Consumption Using FuelDirect</text-property>
+        </label>
+        <data id="1938">
+            <property name="fontFamily">"Garamond"</property>
+            <property name="fontSize">20px</property>
+            <property name="color">#008000</property>
+            <property name="dataSet">FuelDirectData</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"] + ': '+dataSetRow["mobile_number"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">name</property>
+        </data>
+        <label id="1890"/>
+        <data id="1934">
+            <property name="fontFamily">"Garamond"</property>
+            <property name="fontSize">x-large</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FF0000</property>
+            <property name="textAlign">center</property>
+            <property name="dataSet">FuelDirectData</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mobile_number</property>
+                    <text-property name="displayName">mobile_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mobile_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">user_type</property>
+                    <text-property name="displayName">user_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["user_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amount</property>
+                    <text-property name="displayName">amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">if (dataSetRow["name"]== null)&#13;
+('NO RECORDS FOUND')</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">date</property>
+                    <text-property name="displayName">date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">Column Binding</property>
+        </data>
+        <grid id="1793">
+            <property name="dataSet">FuelDirectData</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">if(row["name"] == null)&#13;
+true&#13;
+else&#13;
+false</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mobile_number</property>
+                    <text-property name="displayName">mobile_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mobile_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">user_type</property>
+                    <text-property name="displayName">user_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["user_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amount</property>
+                    <text-property name="displayName">amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">date</property>
+                    <text-property name="displayName">date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="1794"/>
+            <row id="1795">
+                <cell id="1796">
+                    <label id="1931"/>
+                    <grid id="1912">
+                        <property name="dataSet">FuelDirectData</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">mobile_number</property>
+                                <text-property name="displayName">mobile_number</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["mobile_number"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">user_type</property>
+                                <text-property name="displayName">user_type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["user_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount</property>
+                                <text-property name="displayName">amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <property name="dataType">integer</property>
+                                <property name="aggregateFunction">COUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["date"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_1</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["amount"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">date</property>
+                                <text-property name="displayName">date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">id</property>
+                                <text-property name="displayName">id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <column id="1913"/>
+                        <column id="1914"/>
+                        <column id="1915"/>
+                        <column id="1916"/>
+                        <row id="1917">
+                            <cell id="1918">
+                                <property name="borderBottomColor">#F5F5F5</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#F5F5F5</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#F5F5F5</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#F5F5F5</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <label id="1926">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">14px</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">Total Number Of Vouchers:</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1919">
+                                <property name="borderBottomColor">#F5F5F5</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#F5F5F5</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#F5F5F5</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#F5F5F5</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <data id="1929">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">14px</property>
+                                    <property name="resultSetColumn">Aggregation</property>
+                                </data>
+                            </cell>
+                            <cell id="1920">
+                                <property name="borderBottomColor">#F5F5F5</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#F5F5F5</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#F5F5F5</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#F5F5F5</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <label id="1927">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">14px</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">Total Voucher Amount(=N=):</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1921">
+                                <property name="borderBottomColor">#F5F5F5</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#F5F5F5</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#F5F5F5</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#F5F5F5</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <data id="1930">
+                                    <property name="fontFamily">"Garamond"</property>
+                                    <property name="fontSize">14px</property>
+                                    <structure name="numberFormat">
+                                        <property name="category">Currency</property>
+                                        <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    </structure>
+                                    <property name="resultSetColumn">Aggregation_1</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                    <label id="1932"/>
+                    <table id="1850">
+                        <property name="width">100%</property>
+                        <property name="dataSet">FuelDirectData</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">mobile_number</property>
+                                <text-property name="displayName">mobile_number</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["mobile_number"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">user_type</property>
+                                <text-property name="displayName">user_type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["user_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount</property>
+                                <text-property name="displayName">amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <property name="dataType">integer</property>
+                                <property name="aggregateFunction">RUNNINGCOUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["date"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_1</property>
+                                <property name="dataType">integer</property>
+                                <property name="aggregateFunction">COUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["date"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_2</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["amount"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">date</property>
+                                <text-property name="displayName">date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">id</property>
+                                <text-property name="displayName">id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <column id="1872">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="1875">
+                            <property name="width">17%</property>
+                        </column>
+                        <column id="1877">
+                            <property name="width">19%</property>
+                        </column>
+                        <header>
+                            <row id="1851">
+                                <property name="backgroundColor">#D3D3D3</property>
+                                <cell id="1852">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1889">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">#008040</property>
+                                        <text-property name="text">S/N</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1855">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1937">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">#008040</property>
+                                        <text-property name="text">DATE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1857">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1884">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">#008040</property>
+                                        <text-property name="text">VOUCHER AMOUNT</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="1858">
+                                <list-property name="highlightRules">
+                                    <structure>
+                                        <property name="operator">eq</property>
+                                        <property name="backgroundColor">#F0F0F0</property>
+                                        <expression name="testExpr" type="javascript">row.__rownum%2</expression>
+                                        <simple-property-list name="value1">
+                                            <value type="javascript">0</value>
+                                        </simple-property-list>
+                                    </structure>
+                                </list-property>
+                                <cell id="1859">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1888">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="resultSetColumn">Aggregation</property>
+                                    </data>
+                                </cell>
+                                <cell id="1862">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1936">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">date</property>
+                                    </data>
+                                </cell>
+                                <cell id="1864">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1885">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">amount</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="1904">
+                                <cell id="1905">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1911"/>
+                                </cell>
+                            </row>
+                            <row id="1865">
+                                <cell id="1866">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1898">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Total Number Of  Vouchers:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1871">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1902">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">14px</property>
+                                        <property name="fontWeight">bold</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Unformatted</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">Aggregation_1</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1891">
+                                <cell id="1892">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="1899">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">small</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Total Voucher Amount(=N=):</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1897">
+                                    <property name="borderBottomColor">#C0C0C0</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#C0C0C0</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#C0C0C0</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#C0C0C0</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1903">
+                                        <property name="fontFamily">"Garamond"</property>
+                                        <property name="fontSize">14px</property>
+                                        <property name="fontWeight">bold</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">Aggregation_2</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+        <image id="1939">
+            <property name="height">0.53125in</property>
+            <property name="width">0.7083333333333334in</property>
+            <property name="dataSet">FuelDirectData</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mobile_number</property>
+                    <text-property name="displayName">mobile_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mobile_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">user_type</property>
+                    <text-property name="displayName">user_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["user_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amount</property>
+                    <text-property name="displayName">amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">date</property>
+                    <text-property name="displayName">date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">param_stat</property>
+                    <text-property name="displayName">param_stat</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["param_stat"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="source">embed</property>
+            <property name="imageName">design613d9d1f1465dda988f1699.jpg</property>
+            <list-property name="action">
+                <structure>
+                    <property name="linkType">drill-through</property>
+                    <property name="reportName">FuelDirect.rptdesign</property>
+                    <property name="targetWindow">_self</property>
+                    <property name="targetFileType">report-design</property>
+                    <list-property name="paramBindings">
+                        <structure>
+                            <property name="paramName">userType</property>
+                            <simple-property-list name="expression">
+                                <value type="javascript">row["param_stat"]</value>
+                            </simple-property-list>
+                        </structure>
+                    </list-property>
+                </structure>
+            </list-property>
+        </image>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">headermobile.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAREAAABTCAIAAAA3EaQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFn
+                ZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/
+                IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6
+                bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8w
+                Mi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9y
+                Zy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIg
+                eG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDov
+                L25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20v
+                eGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9w
+                IENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDI1RENFRDk2RTVGMTFFNDlF
+                MkJDQjlFOTNFRTk3OEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDI1RENFREE2RTVGMTFFNDlF
+                MkJDQjlFOTNFRTk3OEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlp
+                ZDpEMjVEQ0VENzZFNUYxMUU0OUUyQkNCOUU5M0VFOTc4QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRp
+                ZDpEMjVEQ0VEODZFNUYxMUU0OUUyQkNCOUU5M0VFOTc4QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9y
+                ZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkJPanoAACG3SURBVHja7F0HWBRH
+                /76922v0LigKVlQUFVs0alTs3ahRLLHGqIn8LUn0U5PYWyyxRk30S+zdgBp7RbFGUbEgdlR6vzuu3/+9
+                HW49jxOxJJov8z48PMPs7OzszO+dX5mZhTGZTAIKCopiQ0i7gIKCcoaCgnKGgoJyhoKCcoaCgnKGgoKC
+                coaCgnKGgoJyhoKCcoaCgnKGgoJyhoKCgnKGgoJyhoKCcoaCgnKGgoJyhoKCogDs3/y87OzsuOvX01LT
+                nj59kpycnJ+fj0wvLy9/f3/8DggIqFy5MsMwdGAo/tWcUSgUx44dP3065mR0dFLak6SnyUZWW7VC9ZK+
+                /g8ePsBViUSiUat1er1KpQooUyawTJnWrVvX40BHiOJ9A/OXfg9g794/tm3ffvDgYZUph5UIxQ5isUSI
+                5+UZsnq1/rRBcJMz52OUKpVer5fL5UajMT09He2B8om7ds3B0dHd1fXjbt3Ce/WqUKECHSqK/2XOZGZm
+                /ve/v65a9UtyzmOZk4SVCZ28ZEJWqFcbTAaTTmNIfZretFGznu36Ll+1XCyRZGVmli9fnmVZkMfb21un
+                08nkcoNen5qcfCUuTiIW169bd8yYMXXq1KEDRvG/xhnoilmzZi9cuMgo17BSkWeAk0FngneSlw6/hclL
+                y8fTtCq9Ll/dsFGj/65ZE1SpUoGNKJUKGUYkEpXw9cWfZQMD/fz8YLMhnZuX9zQxMeHevTYtW06fPj0w
+                MJAOG8U7hGjy5Mlvq65Dhw537dFt29btPtWcxHLWp7xLTlK+VqlLvp2jzNLkJOeDLXqNgSOpCcrkydMn
+                N27eMppMrEQCDWMwQLXoszMzs7OyHty//zQ5OSEhwdPDw83NrUbNmklJSc2aNu3Zs6ebu3u9unXpyFH8
+                4/XM8p9+mjBtPCsR+VR0UefpwJmkG1k6tUGdq2UAESMUMgI+HsYweq0WWkkkkeCCoFAb0CoDCnAICQm5
+                lZCwf9++G9evHzhw4ER0dOOGDdevXw8u0fGj+AdzJiwsLL9UMsMI7p1LRZ3ZSUpNno4RCUXsC5eAUOyl
+                YWUoH5Nev+ynn0r7+0+fObN2aOiTJ0/gLyU+fBgZFVUjJIQOIcXfjLe2pnnkyJH4A0l+wW4My6TcztQq
+                DayULSAMY1YksMpsfgxaY+FM84/O9EwjGQyOLi4ioXDY8OFxV67EnDkTGhrq5Oxct27dhg0a7D9wgA4h
+                xT9Uz+ivZ+68tFcz7odvPuhZNmrqRaOBEbGMRZ8IDFq91FEslgpNxpc8Tihi8jLMVhkrY4nNBl2kU6vJ
+                VS8vL7FM1q9v3/jbt0UMs3PHjv3797du3ZoOJMU/jDPbbw7x8vRq6jO7b9++x2IPZjxU6DQGswNjIUxY
+                X//2g0urFGqNTvVCU01gYoUSZxfHxHjVmm9v52VqRWIRb6GJRCJCHqmDg6ODw6f9+qVnZibcuhV348aJ
+                Y8dq165Nx5Lin8EZnSH/5KMfU3Kv966xHn/m5OQEBpbNU6l4xx62ltSBnbWnTulqoswUlZu8tNlWExjt
+                NEUgytdnq41ZpQN8538ed2T9Q1YqtS0D2mjNQYUKFSp8+OGHnh4e27Zvx59nY2J8uSA1BcVfjTfaOwMR
+                33y1f4ryxoh6J0mOq6vr2nVrP+7e3ZqJIolQoVDmZTh/5DstwO0DM1ELc8YkEDLgTM6Jh3NSUmNYMfOi
+                sAErFhv0+oT4eDzLr2TJPn36LF6ypFevXsePH6fDSfG+xwAuPvk1W5MY7N3RRerHZ3bs0AGG03OCbjQp
+                NJml3eoGebWWsa4y1kXOutn+iN2krLObzL9OqQF6g1anMxTxXJFYzLDsxfPnoSVv3749KiLixMmTs2fP
+                psNJ8b5zRqXLlAgdqvh0sMlfsXy5j7e3ja8iYoql04wmPctIzXcUAZPJ7N6IRFGRkQ5y+a3bt7t36zZ1
+                +vQ7d+7QEaV4r22zNGU8DCqxUG6TLxaLN27Y0KJVKytfhTEa9cWpU2NQmwTFcrFELGsSCtdv3Dhi+PDs
+                nBywdMTIkQf37Stc8vLly6dOny6iKrlc3q9vX2kh9+nNERcXd4wzGluEhVWpUgWJa9euHT5yhGXZ2rVr
+                N2zQoPAtsbGx0adOwQoNDQ1t9OGH70QsIqOiHj165OLiApOBHs2w4yG8NrbHDVt+rsnV5O12r44aM4Zz
+                4lm5i/ybbQEn0sYjc/HipTt37UJi9pw5x0+cQGLmzJlXr15VqVRI3Il/lKm+uuZuaPO+/gJuE1rRPzDS
+                HJ2cqlSt+unAgW3bt8ctpE4bTPruu5dWlZqWZvoLgNck9S9avJjknIyOJjmB5crZvaVp8+akwG/r1pne
+                EarVqEHaoNPpTBTP441ss4qezXXGfKUu0+7VBfPmBZQpw/9JNlxGRHz5/ZQpSIwfN+7nX35BYsKECfsP
+                HMjNzUXizKlYd2mJV7AsRSKlQnHzxo18pbJZ06aDIyImTZxYuJinh0dBeaEQKkX0PJAJHcWKRH/FlOTu
+                7k4S/E6fxo0a1eX2yz1+8uTu3bs25TMyM89fuIBEmdKle/fq9a5mUjJwgYGBVMm8ZX+mgmdzjV6RrX5o
+                9yq6GxbaM0eFW80sVz4opHp1JJzd3MipGAixX8mSMOdkcrlvCR+jQF38Buj1egcnp/Hjxw8YONCnQnnF
+                jZsJ585di4t7UfmF8+ffTUi4df26zc+ZmBhXV9e/rdO7de1KEtt37LC5dODAAS230a5Nmzaw36iA/q/5
+                M9BTTlKfVGX8iwrUq1t3woTxC5fONzsqGg1+n4mJFovND42/ccPJyQkJOO5u7u4yqfROQoKvT6kk5bmC
+                qEFxGqDXe3p5la9cGWRQHz5cXiDUyWWrfv55yaJFdsuXLVvW28sLP++207t07jx+wgQkonbvHvfNNzaO
+                BEl04EzNdwsjt5RMSfI2OSNlnV2kJVMVN/P12XLW/i7jGTOmRUX9rtdnCzgt7+NTEE/z8ysIT5csWZIk
+                SpUqhd86lf4VWi+VPn369LMBA5AOZiV6Z+e6esP2XbvmzZ1r16HPy8srojZc3bJ1q0KhCA4ObtmiBZ8f
+                Hx9/6PBhqM2w5s0rV65sc0vk7t1w9DF9BFWq1KFDB5uAoV2UL18e5tmFCxdghiU+flza378gDqlS4UHm
+                XvL2bvrRR9a37Nu//3RMjFqtxqVWLVvWrFnT+mp2djZUFuzbhg0bflC/Pp9/69atI0ePom1dunTx57r3
+                WcxTpTpw8ODFP/+EWivp54dXCym04dWVsyfhgKFVKF85KKjbxx97WAxdaxgMhr1//HHu/Hm0MDAgAITH
+                9PRcuCg9fefOnUqlMjw83M/Xd/3GjZcvX4aJAUu1tVWs6H8/BgAcujPth1NVn+ZeKaLMjVtxMw+H7Hsw
+                qjgVPsyJ4WIApYoTAyhwFdzdu/Xt27BGzXCZQ2tnV3eZzCYSsPDHH0n5rdu2FfFoaDxSrFWbNtb5S5ct
+                I/mLlyyxzodOgB9v3R5vX9/Va9ZYl1m5alWBQ792rXX+/AULSP6SpUv5zN8jI0nmkKFD+cz79+/XqV/f
+                5sW/jIiwru369eskf+iwYdb5aDDJ371nj3U+9Fv5SpVs6sRDHyUmkgLtO3ZETpVq1br16GFdpqS/P9hr
+                02+YMoJDQqyLSR0cvps82brMmbNnyaUOnTo1/ugj68L9+vf/F8UAzPIq8xcLHbLyHxRRJqhSRU83T7XS
+                UDzd5fLSWLPJvCVHg5+SpUpBSiIiImSMMP7J49tQViJWxjCYXO3eWLTTQra0FS6G6dAmAVy5cgXyBD8e
+                aUzS0EtwybKysj4fPnzb9u0vfc3OnTqRBKZnPnPnrl0FDs/HH/MKpEXr1rGxsUT5wNYlxtKKlSuHjRjx
+                TN+yrFBoHkpnZ2e7LScBGIKLFy9+3L37w4dmLzQgIIA/Mf7rb79BL1nfnpCQgHkBdeK5Dg4OyElNS+sZ
+                Ho7ffJmU1NSwli2hikl4o03r1u7u7lA7M2fNmjJt2rMWWmy8/QcOgD/lypUjkXegZcuW/6IYAOAk9YWI
+                Z2seF/0UmdA9VXVTqU17aYUPsk+bTEaGEb1IK4IqBo2mUlDQ2K++Gj16tNFoXLZs2YZ1azMyMrSsKN9k
+                CmbFZ8+etXv77DlzPvv880GDB/M/vXr3njN37rOGcpJHflsHM2wSAGZ6/IYkRf3++/4//vhjz55zMTF+
+                3J63kRERWsuBuaLNMySOHT9ORFCv1x/mDDO4Wx81aUKK/bh4MRHugQMGxF6+fDo6+vyZMxB05EChxVlF
+                O0ibbcJcdls+YuTIgt6YOfPq5ctnTp2KiY6uX6/eL6tWWVukBC3CwuKuXsVzUZK0Ckbali1b+AJTpk7N
+                yDQHTtesXn308OHdkZFXY2Nr1aqFnOkzZjx89KhwA2bNmHEtNvbKpUtzZ8/evHFjvz59/kX+jFloxB4i
+                oSRTde9FBZTadIU2RSp2TlHe3HxtgJ9zdVYoNZL9ZuSU8zOPn1FqU5OUl739PBgm29YfBXQ6JGqGhmKS
+                dnJ2jr9165fVq3OysjAgrEyG6xkGvVAk1guYe/G3YDo7OjraVBJ96hR+bDJPnTpl44i/nNgPHpw9Z45V
+                fDtxYts2bUhm9erVFy9a1KNnT8gQjMNWL5s+O7RrB5cGUzL8CsjN0WPHCHnat2/P64c/uCVa3xIlVq1Y
+                QXLgdSxdvLhj585I79m7t1q1aq/U8kuXLsGRQKL/p5+OHTOGZIK9p06etBv5/HnVqpKc5wmiLlm0KIQj
+                Q+yVK6SARqPZsXMnEn179+ZFH63dsHZtVS46GhkZGWGhKAH8tK/GjiXp0aNG/etiAICMdRYxonRlQuFL
+                mfn3j96bnay4pjOoxCJHZ2mJXG1SRurdF9bFmEQs4yzzEgulAtOzaUlvMGASNqv+xo27de8OeYo+eXLT
+                li0GUIhji5l75iOfglyTMdVo8GCEV1PT4VvDZ7V5ArxtL29vEsEjgEKwuxhfNC5cvMgbe/CCSIXW9g+s
+                qZdyBswnS1VRUVEQOP78HG+Yodq01FQkbD64g1kcFhrIlvDqe4UucYSxfkoR8C9Vyjpy4Ovr6+TkpFAo
+                eKUBWy6TUzLo1Xv37pEvPKJtuXl5mLAwbRWO+4f884/WvilnvBwqOUlLQM9oDQqJyInPz9dlbY0bpNHn
+                eTsGQaIVmhS9SSMVOUmtyjwji8gIc9ekF2tVorxsoV7BahRm20wPVhjNGqlN27bh4eEQShhB69atM5NE
+                JOLZIngWnGbknFXnaDLB0yjMmTmzZ/fo3t1mhec1lkH4+NuIL7+0WyArO/ullQQHB0NLwL46ffo0DB6i
+                AGGY8RGz5OTkTGhRzl15bp6SSt3d3NIzMoiMvhKSkpIK4pbFODohkUqtz5/r9HriTfG2a1JycoENuWjR
+                j/bi+zYOEr/k8K/mjJARecrLQ89kqO75OT+bQvK0KVqDysuxYu+QDVqD8vdbEU9zr0hEDjaKRciahIzQ
+                oJYp0oWqPJM636A3ad2FRo1OTQyyXuHhXbp0MRmN+/bvX/vbb8RVZ8Via7YUVCZgFEZjmtFQSshqBKaM
+                9HQ7AYZCAejiEKaItfCgoCC4yDrOaIRxiNrkMplWpwMfitN7Pbp1A2fS0tP/b/To+/fvmw22Dh1kmAtI
+                33LbFAr7V3yTCp99smlq4dUVvkBxzk1BleGl+EpI1MhubbDcfHx8iBdHaOYgl6MfGjVqVNgjfdHj1Go1
+                epIPY4BdyCHxGNRM1HhOTg7Jyc7OdnFxsekZUgxtxmxibZmTu4rz/Ym/gzOceeYiZ93TVAnWnIHTgh+N
+                XsmlZUaBxnxqhuFMLgZCYGKEjEnPavNYVa4AbNFotCaRVihCYUav10Bc+vYZ0Kt3D0zAmzZt2sUZzbiN
+                RccVYouFM+aARpbR5C8S+AhFmIbtjkoRL0K+F2UON1mktnC4zCb+tmDevKJtMKPRyMtX4aswkIh59iuZ
+                Dp43mXy8vV1dXKDTbPSJWqMhb0cWhclTiCzKnm+5sBBnSllsLehh4qm/CUpaFtmGDR3Keymvh9Vr1nwZ
+                EYH+b9mixd7du7du2zZoyBCIOPwu+G9Qjy24E+zQvS3Cwvz8/DZt3gzCbNm0CX/ylSxdtmzZ8uUiloXD
+                +d2kSZMmToR92LlrVzifpUuXzlepHty79+7jZkA1ny7QKtn5dnfQmCXGaNIbdCADKxKKhAKxADaYQpab
+                LEt9wCY/NGRmqDVGpVCqM8dLGSGIlZqaNmLYsJ49+qxcufKTHj3MhOEssQL1UmQMWsIInBihXmDC1PKq
+                L+Lt7U0ms9sJz7ln12/csClZ37Ju+NvatcUNytsLc0NNWTvxXp6ezZo2tdaK3j4+SJw7f976rnPnzhGG
+                VKpYkQ+aEbZftrgrBTGP6GibJ9YODSUJyNybD33FihXRZhKNeJN6rl69OmzEiP+MH79h3TpwIDklpU+/
+                fl9+8cX2rVtXrloVtXt3iRIlQAN0DnLwrLXr1u3asaNSpUofP29pp6alPUpMnDNr1vhx40ike/uOHSdO
+                nty2ZUvzZs2ePH36XsSaiRoRi+TQM4UviSUs55bokx7qMp9IMh6LUhOFKQ+Y5EeGtBSNIl9pEqlZiQlc
+                4r99xph3BvjhVTt2abk7KspsPIEtLCsohi2Be3NNxjyjUYoZ9tW9FGgP8pHO8xcuzJw1CyoOpsLuPXsW
+                LV5c2DkmgVdMh5jYiI0ONQUK1QgN3bJ1K1+S3+5w9NgxKIfC1vwnVqPeqVMn60CCOaeD+WwS/GwSjgMx
+                TkZHj+TC3AKr/TVoNpHd/QcOYK7F5IoHrd+4sTCl4YKTLypu27592vTpUGLQUZCqWnXqrPr551c2MWSy
+                rtzeudMxMeMnTFAoFCT/8JEjNWvXnjFzJmHyS3H8xAlYgNAM8DZHjxpFltdmz5zZulWrKlWqgCRKlUos
+                Fk+ZPBk5IOrQzz6D1zdowIBnatyynFW5cuWuXbqM5PxMtAcaJqBMmbZt2nz9ZmrwLXMGtpmL1C8575rR
+                ZLAnxuYDZxqtKidXnZOjUahUakO+SahlJQYoFoax0wB03+PH5gUf8zqxOThQrL1nBrNCM3kwIlSqNZle
+                z24dO3o0ScBkqhIcXLV6dcxkIE/hkot//JEkRo0ZE1y9epOmTVF4yNChN27c6Pvpp2kWb6qxxaAHtcpX
+                rIhLNvV079bNbpqPxpKdNb9HRgZVqRIcEhLWsuVTzo//v4gIflkQTONDuqPHjkXL0aSBgwbZdR5W/vQT
+                SUydPh11VqtRo0WrVnCrvhg58uChQ6/aY5Bj+BVIzF+woHLVqh81axZSq1bb9u2vX78+eerUwjEA+ysW
+                Dg7W7CK2MeEDOh9XGc7zzOJidCRmSBhCVlqt/SvifSUnJSGNboF3ROIxJL73vnDGUeLlKPGGo5+nSX7B
+                9M/AsGZZhhULOPtMyLliL5RqXHd19oQ6FhTbY4NoiNGbDJMDPWPmj8l6DHItYS670m+NQQMHQq2TNEQT
+                9oBviRK8KPPzKFC1atVDBw6Q7WcPHz06c/YsceLr16t38vhxd8vOfw8PDxgGZFconl54sRWzJtl4jznb
+                2jAr6FtHxxPHjxOXCdYmOTsASwzOwzyrpVgAhs2QwYP5cBaaVLZs2TaWr1hZe0SwBo8dOVKdWz8BtxM4
+                QxSzOEhYo0YN3sgx98Dzxgy6NDc310b+8GpnT58mZ+NSUlNjzpy5efOm2W6sVGnThg2VLN/j1nJhEnNE
+                kYsEEoCoFStXvnLlSpcuXcxKtUuXiFGjYKTBpYGr1qZdu7Fff/3w4cP+/fpptFq8AtHSaFUG587l5OaS
+                2iZ9911Q1apE1ZM2k2M/GC+ocbS5Q6dOn4SHFw6lvLMYAKTfVVoqTRSfmX/fVVbqDeuCrmBMogG9h3Ra
+                NfDuvXsk3vrwwYPEx48TExMxZ6SlpsLIgfnx3HAaDZ3kTkMcXGJ1GmeGiTQarCnZJzycHEAozn8WmDZl
+                CjoaHECPe3p6durY0d3dvecnn5gXRp7fGQnzIPbPP2EOYVwxnJjzQADYzTYVduncuXHjxsS18OQsKBvA
+                NMebQp/YDeIhHz4xrBdoMBJH+rBhQ5utogQ/LVs2oH//2NhYWFwlfH27de2KCsmq6AcffGBdEiJ+6cKF
+                ffv3g4QQLzc3N+RUtHhHwKKFC1NSUsBYaznz9PBAUyGX1seiCO1BQhh4YAtaiIcGBAS0ff4sQ+WgoG3c
+                7oGyVp+oRwFwI1+thmEZEx09YuRIaKcePXpAOZyLienbv39kZOSK5ctr1aoFL6V3eLgnN/UMHDAgmGMI
+                jEy8L9FL5HhSWPPm5MCSl7c3PGGFUokRP3706PoNG6B6Fyxc+FY483a+b3Y749DvN0eGlZtYu2Q/fkFz
+                87X+zg6e/artUmuUC/f2yc5/ygolxdAYJoxTp3oR9cr2sFsAbEnjAPs+KSkJXMLUkvg4UZirkKWl56Sn
+                u6o1V/XaNYcOQrYEFP9uQPXBufqwQYMf5s+Hw6ZTq9+8zrdzqsldVoYRiLLUD2xMMnseTjFUjcGYr3rh
+                uzlysPsfNcx0Sk9/8uQJLA36vwMogLzc3O8nT4Z5JpVItlltk3v3nIHj4Sb3T1PefuaTMKxRYBSSb80w
+                r1oZYzAYX8ezInTitjBSUAAVKlS4Ex8P15RfSnovYgBmT1deVsSIE7PPWykZoUKTXMG9GRcAMfyl/4Gw
+                OHiN5RqbOOZzGj8lJcPemunbBWZHaM6iuw6NJH45EtYhCrN/z6HwLerXsk9eY59OcXqV30LxerWZ/wNF
+                drbNGxUeaxDGYDDY9M875gwI4yD2yNfn3M8u2DWckHEYnonWqOTcesO7Jcw333zz2WefjR8//pFlazq8
+                9hkzZpD0Dz/8cO4cOVAt+Pbbb7dzp1/mzp27/QXHYFasWPH1119//vnnv3DfACE4ceIECf4A06dPv2dZ
+                b169evXGjRutbz99+vSCBQv4P4cMGfIztzCyf//+JUuW8OI+cODAsWPHzp49u+iRBntnzpzZvXv3Tz75
+                ZNmyZTpLeGrlypVfffXVF1988bPVqsvly5dRcvjw4cuXL7db2759+5YuXUrCuFOmTOEfvWrVKtw4ePDg
+                0y/+5NXJkyfbWLZ4E+CNunEhR0j2tGnTyPqBXq8fyfn6Au7zKVevXiWZU6dO1Wg06enp4eHhyMFIIYfU
+                gzJzLUHCWbNm8fHrqKio9u3bjxs3bpfl3BHqQaeNGDFi9OjRiYmJPIV69eo1dOhQDPR7xBlzTMmvj7Ok
+                RNSt0Zuufbo2tvuZxBWw1gJczV64hJUX84OAPMSit/apMfPu2mvXtm7diplmsWV1EnNzTEwMSYMwfFC1
+                bt26mzZtevDgATjwob1vi2F4Nm/eDNpAjCCjBw8eJPkY78jIyF9//VXAHS7ItuzRxHiT2CsPuFsXLdui
+                CXsh3FoO5y3r/QkJCRhpiDtEjd8gYxc+Pj7/+c9/XFxcqlWrBlkhoSo0ctu2bWgeakBT+UaeOXPGzc0N
+                rNiyZcsfVmfdeNy9e/fSpUvkdUAP/hTQ8ePHe/fuPXHiRDzrRcuU6Ebzf9Q6cYLPwe07d+5ES2BsR0dH
+                k42tEomkRIkSmEeuXLmC1yQhb2TGxsZiosFkge6FDsfo8IOSlJSEESRp3JXK7fUmLA0NDcXsQGhG5po7
+                d+5s2LDBw8MDTSWZqBadiclrCrdN6T3iTJBX665Vl3nKy6cpb+ZpUuRi105V5ge6NDEY9TmqVPMyP1P8
+                NomU2my17u1oUoyHSCSCVoH4DuC+HCDg1sX4c+3u7u783s1OnTrVq1evRYsWUE2lStmJm2PuHDRokIOD
+                A27HJHrIsggIZmL+PnbsGMY+JCSE39cIabY5OymzBEYJ6tevj3rmzZvn7e3NR6K9vLwwzJhct7zMbcWD
+                XF1dS5cuHRAQgAeRPYjgA2ZWkA2X+vXrd+TIEVIYzwWp4uPjxWKxt73vFuC9yFY6VItu4Xc04mXBIlDa
+                39/f7jZHSDlUHJ571OqELEwmzO579+6FxIPSfNh60qRJmZmZYDiUBr/voVGjRqA0JhR0Pnhr3ldmOQAH
+                jt2/f3/+/PlQFFBWPtx+IgG3dw7UgtK+wH3dirQfLd+xYwca05k7YiTg4vvozDlz5mx5v2IAHMq6Nwpw
+                a6DQpghMAkepNww2pVK1+GCvPG0aY2RZRlKcShjuC+jRt9afuLWmc82JH1Tp/IatgmEAEcF8BnHZazmk
+                xW9qFHCrBHr9sw93NGvWDEr/o+c/YcFDb9kPT2IVqJnnTMWKFaGaYG8EBQXxooCnFP15ThghGHVIw3ff
+                fdfeshcGczlqgHBAWIuzFRciYr0rB7fzd+FN+UaCRdAGkPvvv/++rr24IiohhVHSfPDdIuV4ZajfJk2a
+                LFy40O7KIMQdkopie/bs4adzKBZMH7Vq1YIiRbfzzQCqVKmSlZVl/S/soTGgFcEcMAqqCdLPT3B4BfQh
+                5hHSLbzzgwSmCXKqhx9KdAWIBNvvG8s5QnIXiGf36x/vUs9YwmUiF2lJF1lJEMasVdMfZKoeCYxCk+AV
+                nDzyPQARIzt7/y3sI4SUQ6DDwsLKly/P/++AwMBA6PGzZ8+mcwvhuPTsFYRCrxd/zKlVq1awdmB6YcLD
+                tNqxY0de2jA7QkeVLVt20aJF/MZnPBrWArwO3jGFM229Fg7DA/MxfK3Dhw+TU/XEncAwQ2hAYJ7PuMrb
+                6IUjHNZuT9u2bdeuXYu5HLM1rKN27drx/KxTpw6EsnHjxnbrAe2hJ1EV7sJzyaYYYvPAX4KzZ96cYQ8w
+                faEW0Fq8OO9B4U3RJw0bNoRYwyC0/soC3s6mkzHdYHRgx2K2wtPRVF4b4+l+fn79+/eHhsdd6ZZ9SXg7
+                TE8wGnnuod/kcjk0UoMGDeBV8p1DOjPMagf0G3nvb/H/NtuZt/S5Z+7ugDPDCF55/5fBpC3rWTcksPkb
+                tgHTG4xgTF2QIbwsWSdGJ8Kegc8NE7xHjx4trM7BQ8oxQRY++EGA+RKiAOMYBg98Yv77D2RgwBnYWpBs
+                SC2Z/MAHmPgQHUzbVbnVa1SO+ZjfGQ2rHUOOuR9TJsw2ot8w8FAI8Mhh6tSuXZtUhTkeJlCoZWOyNWDi
+                wzbjN6oEBwfjufC4YCtCVlpZPoaERqLmIjZDlCtXDnwG32DHQhfxDAGxUTmu2r0Lz4qLi4PLji6FbkRj
+                yNsRCYZCQ7egTzp06MCfqsCL4GWt/9MW+gQDhBvReEwxoBC/kQf1o88bcMdp4f7hLmLEgtUwleE9wqIj
+                LwXNAyLhXkdHR1IJMdjg+ZCSb+V7HcxfGgXGO/x5b49SmyNiXu3TcmiVzqSuVbqdh8vbCauj0wsfg7E+
+                1fRKgGBxHyRyKGZ5lUoFRr3qgVC0jWw0fL2TUhBZzBeFP4rwUkCg7e7xKWKU39ZWrteAitvybG34FdGZ
+                b+Uz9sw7XzmhoPhnQUi7gIKCcoaCgnKGgoJyhoKCcoaCgnKGgoKCcoaCgnKGgoJyhoKCcoaCgnKGgoJy
+                hoKCgnKGgoJyhoKCcoaCgnKGgoJyhoKCgnKGgoJyhoLib8D/CzAAHFKio+hrNQcAAAAASUVORK5CYII=
+</property>
+        </structure>
+        <structure>
+            <property name="name">design613d9d1f1465dda988f1699.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMQEhAMEBQPEA8RDw8OERAPDRAPFxAQFBEWFhUVExQY
+                HCggGR8xGxYVIjEhJSkrLi4uFx80RDMsNygtLisBCgoKDQ0OFBAQFiwcHBwsLCwsKyssLCssLCw2Kzgr
+                LCwsLCwsLCwsLCwsLissLCwsLCwsLCwsKywsLCwsNywsLP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEA
+                AgMBAQEAAAAAAAAAAAAAAwYEBQcBAgj/xABAEAACAQIBCAcFBQcEAwAAAAAAAQIDEQQFBgcSEyExURRB
+                YXFykbEiI1KBoSQzQsHRMjRic5Lh8BclssJTVIL/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAgED/8QAHBEB
+                AAMBAQEBAQAAAAAAAAAAAAECETESUUEh/9oADAMBAAIRAxEAPwDuIAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY+OxsKMdebsupdcnySPvFV
+                404SqzdoxTk32I5rlTLEq83VluXCMfhjyKiNFhxmcc5u0Pdx7N7+bMCWPb3ylJ98mzQKuHWL8pb7pq5v
+                zZ705c35sr+1G1GCwdOXN+Y6cub8yv7UbUYLB05c35jpy5vzK/tRtRgsHTlzfmOnLm/Mr+1G1GCwdOXN
+                +Y6cub8yv7UbUYLB05c35sdNXN+bK/tRtRg36xzXCUl3SaMvC5wVIPe9dcp7/rxKsqwdcYOnZMypCuvZ
+                3SXGD4r9UZxyjCZRlTkqkXaUXdP8mdKyPlGOIpRrR4vdJfDJcURauNZoAJaAAAAAAAAAACo6Rse6dGnR
+                XGrO78Md/rY5+qly0aUp+8wy/gq+sSo02dacTLMjM+tcxlI91yxPrjXINc81wMjXGuY+uNcDI1z5lWt8
+                9yINdtqMU5Se5RW9tm6xmRXhsMsRW+/rTjThH4I/tSt8la/aTM/g12uNcx9ca5QyNca5j641wMjXGuY+
+                uNcDJ1zxzINc8cgPp1C2aOcoPa1cM+EobRLti7P6NeRTZM3OYMvtsPBU9ETbhDrQAOKgAAAAAAAAAAc3
+                0p/e4bwVPWJUqfAtulP73DeCp6xKlT4HanEy+z08BQAHkbyepFOcvhirv+wHpLg8LUry2VGLlLg31R73
+                +RYMi5l1a1p13sqfwri12sv+S8lUsNFQpRUbddjnN/jcabNjNOGGW1qe3WfFvq7EaHSPi9atSoLhSpuT
+                8U3+kV5nRSsZdzPhiakq+vKE5W1rO97JJbn2JE1nJ2RzQFxraP5r9itfxRX5WNbiczcVDgoVO5uP03nT
+                3DMaAGRicn1qX3lKpHt1brzRjKSfA3R6ADR6eAAeSNvmD+/U/BU9EaiRt8wf36n4KnoibcIdcABxUAAA
+                AAAAAAADm+lP73DeCp6xKlT4Ft0qfe4bwVPWJUqbO1OJl9njvuW5drvu+S4noKFlzfzZo4izliIzfF04
+                PUf9L9oveTMh0MOkqcIrtsjj/b1rg+RvclZ24mhZOW2pr8FV3duyfFfO5zmkt11UGiyJnTQxVoX2dX/x
+                zsm/C+EjenPMaAHzrq9rq/K6A+gAB8TpqW5pPvRpcp5q4evduChP4obmb0Acuy1mjWw95w99TXJe0l3d
+                ZXjuLV9xTM8M11JSxVBWmt84L8a/U6Vv9Zigg8TPTox5I2+YP79T8FT0Rp5M3GYP79T8FT0RNuEOuAA4
+                qAAAAAAAAAABzbSr97hvBV9YlQpst2lf73DeCr6xKfTZ2pxMpbi58XFyh93Fz4uLgfdy1ZvZ51KNqWI1
+                qtLgp8ZwX/ZfUqVxcyYiR3HB4uFaCq05KcJK6adznOkLC7PFKst21pxd1u9qPsv6app8hZcq4OevTd4N
+                +3Tb3S7ex9pZ88MVTxuEp4yk7ulUSmnxgpbmmu/VIiPMtVjB5cxNH7utVXZKWuv6ZXRZ8kZ/NNQxUE1w
+                2lJcO2UP08ii3Fy5rEsdywmKhViqtOSnCSunF3JjkmaWXZYWqotvY1JKM49UW9ykvzOtQldJrg1c42jF
+                PTxq+49Bg5BnVgVQxVWmt0W1Uj3S/vc1Nyz6SGulxt/69O/9cyq3O9eJfUmbjR+/t1PwVPRGkkzdaPn9
+                up+Cp6Iy3CHXwAcVAAAAAAAAAAA5npZfvcL4KvrAptNlw0uP3uF8FX1gUumzrXiZT3FyO4uWJLi5HcXA
+                kuLkdxcCS5Lh8VKCnGL9mpFwnHqkur5rqZjXFwJLi5HcXA+5M7RmxXdTDUZvi4Rv5HE5Plx4LvO25uUN
+                nhqMOUF6HO/42GzANJnfllYTDzmn72fu6S/ja/a+S3+XM5w1zbO7HbfF15rfGMtlHugtV/W/mai5Eme3
+                O8JfUmbzR4/t9PwVPRFfkze6On9vp/y6nojLcIdkABxUAAAAAAAAAADl+l5+9wvgq+sCkwZdNML97hPB
+                W9YFHhI614mU1xcjuLlCS4uR3FwJLi5HcXAkuLkdxcCS4uR3Gt83wSXWwNzmvk94nE06drxi1OXcuH19
+                DttOGqlFcEkipaPsg9Hpbaa97U3vsXIttSoopzk1GMU25N2SS4ts42nZVD5xFeNOMqs2owhFylJuySXF
+                s4xnVl542u6u9UoXhRi+qF98n2vi/kuoz8+M7ely6PRbWFg974baS/E/4eS+fK1TudK1xkykuLkdxcpj
+                7kzf6N39vp/y6noiuSZYNGr/ANwp/wAup+RluEO0gA4qAAAAAAAAAAByvTI/e4TwVvWBRYMvGmjdUwb6
+                tSsvrAoNKZ1rxMsi4uR3FyhJcXI7i4ElxcjuLgSXFyO545ASuRdMwM2HXmsXWVqcXeCa4vmY2aGaMq7W
+                JxHu6EfatLddLrlfgWjLGfuGwkdhhEsRUSsnF2pR75/i7o+aImd/kNW7KGPpYWm61aUadOKtd9b6lFcW
+                +xHJc7s8amNbow1qWFT3Qv7VW3B1Lf8AHh39Wiyxlmti57WvNzf4Y8IwXKEer1MG5ta4zUlxcjuLlCS4
+                uR3FwPuTLFoyf+4U/wCXV/IrE5Fj0Wu+UIdlKq/+K/My3CHbwAcVAAAAAAAAAAAoGmPJjq4SOIiruhPX
+                dvgatL9fkcfw1Y/TGNw8asJ0ppOM4uLT5M/O+d2bs8nV5U7N0JNulPju+FvmXWWSiUhcwaWJJ1WR0Ynu
+                LkO1Q2qAmuLkO1Q2qAmuZGExbpPXjGm5LhKcXO3cr2+hg7VDaoDZ5QyvXxFlWqznFcIN2gu6CtH6GFch
+                2qG1QE1xch2qG1QE1xch2qG1QE1xrELrIhqYgCTEVbHQdCuTXKpXxzXsqKowfN3vL/r5HPMk5Oq42tHD
+                0ldyftS6oR62z9E5t5Jp4PD08LT4Qirv4pdbfzOdpbDagAhoAAAAAAAARzZIeNAavF1ZLgVHOSg8RB0q
+                kdaL5rgX6VFMx6mT4y6gPzrlTNyrSbcE5R5daNTNTjucZr/5Z+lK2QKcuKXkYNbM+jLqXkb6lmPzq8Q1
+                z/pZ8vF9/kzv9XMGi+peRi1NHFF9S8jfUmOE9NXP6MdOXP6M7dPRlSfLyIpaLqXZ5D1JjivT1z+jHT48
+                /ozsz0WU/wDEef6WU+zyHqTHGunx5/Rjp65/RnZf9K6f+I9Wiyn/AIh6kxxnpy5/RnvTVz+jO0x0W0uz
+                yJIaMaS5eQ9SY4msZ2vyZ9LE35+TO5U9G1FdS8jKpZgUF1LyHqTHBouctyUn3RZscn5BrVmrxcY82d2o
+                5m0Y/hXkZ1HN+nHgl5D1JikZp5L6LFRpxs3+1K29vvLvg6kuszaeToR4InjRSJa8pslQSPQAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z
+</property>
+        </structure>
+    </list-property>
+</report>
